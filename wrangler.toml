@@ -1,0 +1,23 @@
+name = "gurubusiness"
+main = "index.js"
+type = "javascript"
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+workers_dev = true
+route = ""
+zone_id = ""
+
+[env.production]
+name = "gurubusiness-prod"
+route = "gurubusiness.com/*"
+zone_id = "YOUR_CLOUDFLARE_ZONE_ID"
+
+[build]
+command = ""
+cwd = "./"
+watch_paths = []
+
+[build.upload]
+format = "service-worker"
+main = "./index.js"
+
+[triggers.crons]
