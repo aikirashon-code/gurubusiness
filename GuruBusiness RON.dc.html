@@ -23,22 +23,41 @@ a{text-decoration:none;color:inherit}
 </style>
 </helmet>
 
-<nav style="position:fixed;top:0;left:0;right:0;z-index:200;height:64px;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,30,51,0.07);display:flex;align-items:center;padding:0 32px;justify-content:space-between;">
+<nav style="position:fixed;top:0;left:0;right:0;z-index:200;height:64px;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,30,51,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 16px;gap:12px;">
   <a href="GuruBusiness Home.dc.html" style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
     <div style="width:30px;height:30px;background:#0052FF;border-radius:7px;display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="5" height="12" rx="1" fill="white"/><rect x="8" y="1" width="5" height="8" rx="1" fill="white" opacity="0.6"/></svg></div>
-    <span style="font-family:'Manrope',sans-serif;font-weight:800;font-size:16px;color:#101E33;letter-spacing:-0.3px;">GuruBusiness</span>
+    <span style="font-family:'Manrope',sans-serif;font-weight:800;font-size:16px;color:#101E33;letter-spacing:-0.3px;display:{{ logoTextShow }};">GuruBusiness</span>
   </a>
-  <div style="display:flex;align-items:center;gap:28px;">
+  <div style="display:{{ desktopNavDisplay }};align-items:center;gap:28px;">
     <a href="GuruBusiness Mobile Notary.dc.html" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:rgba(16,30,51,0.55);" style-hover="color:#101E33;">Mobile Notary</a>
     <a href="GuruBusiness RON.dc.html" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;color:#0052FF;">Remote Online</a>
     <a href="GuruBusiness Apostille.dc.html" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:rgba(16,30,51,0.55);" style-hover="color:#101E33;">Apostille</a>
     <a href="GuruBusiness B2B.dc.html" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:rgba(16,30,51,0.55);" style-hover="color:#101E33;">B2B</a>
     <a href="GuruBusiness Article 1.dc.html" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:rgba(16,30,51,0.55);" style-hover="color:#101E33;">Resources</a>
   </div>
-  <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+  <div style="display:{{ desktopCTADisplay }};align-items:center;gap:10px;flex-shrink:0;">
     <a href="tel:6090000000" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#101E33;padding:8px 14px;border-radius:8px;border:1px solid rgba(16,30,51,0.12);" style-hover="border-color:#0052FF;color:#0052FF;">Call Now</a>
     <a href="GuruBusiness Home.dc.html#pricing" style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;background:#0052FF;color:white;padding:9px 18px;border-radius:8px;" style-hover="background:#0041CC;">Start Online →</a>
   </div>
+  <button onClick="{{ toggleMenu }}" style="display:{{ hamburgerDisplay }};align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;border:none;background:rgba(16,30,51,0.05);cursor:pointer;padding:0;transition:background 0.2s;" style-hover="background:rgba(16,30,51,0.1);">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="stroke:#101E33;stroke-width:2;stroke-linecap:round;">
+      <line x1="3" y1="6" x2="17" y2="6"/><line x1="3" y1="10" x2="17" y2="10"/><line x1="3" y1="14" x2="17" y2="14"/>
+    </svg>
+  </button>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:64px;left:0;right:0;background:white;border-bottom:1px solid rgba(16,30,51,0.07);box-shadow:0 4px 16px rgba(16,30,51,0.08);padding:16px;z-index:199;display:{{ mobileMenuDisplay }};">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <a href="GuruBusiness Mobile Notary.dc.html" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#101E33;padding:12px 16px;border-radius:8px;" style-hover="background:#F4F7FA;">Mobile Notary</a>
+        <a href="GuruBusiness RON.dc.html" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:#0052FF;padding:12px 16px;border-radius:8px;">Remote Online</a>
+        <a href="GuruBusiness Apostille.dc.html" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#101E33;padding:12px 16px;border-radius:8px;" style-hover="background:#F4F7FA;">Apostille</a>
+        <a href="GuruBusiness B2B.dc.html" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#101E33;padding:12px 16px;border-radius:8px;" style-hover="background:#F4F7FA;">B2B</a>
+        <a href="GuruBusiness Article 1.dc.html" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#101E33;padding:12px 16px;border-radius:8px;" style-hover="background:#F4F7FA;">Resources</a>
+        <div style="height:1px;background:rgba(16,30,51,0.07);margin:8px 0;"></div>
+        <a href="tel:6090000000" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:600;color:#0052FF;padding:12px 16px;border-radius:8px;" style-hover="background:#EEF2FF;">Call 609-XXX-XXXX</a>
+        <a href="GuruBusiness Home.dc.html#pricing" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;background:#0052FF;color:white;padding:12px 16px;border-radius:8px;display:block;text-align:center;" style-hover="background:#0041CC;">Start Online →</a>
+      </div>
+    </div>
+  </sc-if>
 </nav>
 
 <section style="min-height:78vh;background:#101E33;background-image:radial-gradient(rgba(0,82,255,0.1) 1px,transparent 1px);background-size:28px 28px;display:flex;align-items:center;padding:120px 24px 80px;position:relative;overflow:hidden;">
@@ -172,7 +191,30 @@ a{text-decoration:none;color:inherit}
 </footer>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {}
+class Component extends DCLogic {
+  state = { menuOpen: false, isMobile: window.innerWidth < 768 };
+
+  componentDidMount() {
+    const handleResize = () => {
+      this.setState({ isMobile: window.innerWidth < 768 });
+    };
+    window.addEventListener('resize', handleResize);
+  }
+
+  renderVals() {
+    const s = this.state;
+    const isMobileViewport = s.isMobile;
+    return {
+      menuOpen: s.menuOpen,
+      desktopNavDisplay: isMobileViewport ? 'none' : 'flex',
+      desktopCTADisplay: isMobileViewport ? 'none' : 'flex',
+      hamburgerDisplay: isMobileViewport ? 'flex' : 'none',
+      mobileMenuDisplay: isMobileViewport ? 'block' : 'none',
+      logoTextShow: isMobileViewport ? 'none' : 'inline',
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
 </script>
 </body>
 </html>
