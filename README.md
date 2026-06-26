@@ -6,67 +6,37 @@ Premium notary services platform for Trenton, NJ. Built with Design Components (
 
 ```
 .
-├── index.html                      # Landing page (directory listing)
-├── GuruBusiness Home.dc.html       # Homepage with pricing engine
+├── index.html                          # Landing page (directory listing)
+├── GuruBusiness Home.dc.html           # Homepage with pricing engine
 ├── GuruBusiness Mobile Notary.dc.html
 ├── GuruBusiness RON.dc.html
 ├── GuruBusiness Apostille.dc.html
 ├── GuruBusiness B2B.dc.html
 ├── GuruBusiness Article 1.dc.html
 ├── GuruBusiness Article 2.dc.html
-├── support.js                      # DC runtime (required)
-├── wrangler.toml                   # Cloudflare Workers config
-├── index.js                        # Workers entrypoint
-├── _redirects                      # Netlify/Cloudflare routing
-└── _headers                        # Security & cache headers
+├── support.js                          # DC runtime (required)
+└── README.md                           # This file
 ```
 
-## 🚀 Deployment
+## 🚀 Deployment to Cloudflare Pages
 
-### Cloudflare Pages (Recommended)
+1. **Push this repo to GitHub** (all files included)
 
-1. **Create a Cloudflare account** at [cloudflare.com](https://dash.cloudflare.com)
+2. **Log in to Cloudflare** at [dash.cloudflare.com](https://dash.cloudflare.com)
 
-2. **Connect your GitHub repo** or upload files directly:
-   - Log in to Cloudflare Dashboard
-   - Navigate to **Pages** → **Create a project**
-   - Select **Upload assets** or **Connect Git**
-   - Point build command to: (leave empty — static files only)
-   - Root directory: `/`
+3. **Create a Pages project:**
+   - Click **Pages** → **Create a project** → **Connect Git**
+   - Select your GitHub repo
+   - **Build command:** (leave empty)
+   - **Build output directory:** (leave empty)
+   - Click **Save and deploy**
 
-3. **Set custom domain** in Cloudflare DNS settings
+4. **Set your domain:**
+   - In Cloudflare, go to your Pages project
+   - Click **Custom domains**
+   - Add your domain (e.g., `gurubusiness.com`)
 
-4. **Configure caching** (automatic via `_headers`)
-
-### Cloudflare Workers (Advanced)
-
-1. **Install Wrangler:**
-   ```bash
-   npm install -g wrangler
-   ```
-
-2. **Authenticate:**
-   ```bash
-   wrangler login
-   ```
-
-3. **Update `wrangler.toml`** with your Cloudflare credentials:
-   ```toml
-   account_id = "YOUR_ACCOUNT_ID"
-   zone_id = "YOUR_ZONE_ID"
-   ```
-
-4. **Deploy:**
-   ```bash
-   wrangler deploy
-   ```
-
-### GitHub Pages (Free Alternative)
-
-1. Push to GitHub
-2. Enable **Pages** in repo settings → **Deploy from branch**
-3. Select `main` branch, `/` root directory
-4. Cloudflare will point your domain
+That's it. Cloudflare automatically handles HTTPS, caching, and CDN delivery.
 
 ## 📋 Before Launch
 
